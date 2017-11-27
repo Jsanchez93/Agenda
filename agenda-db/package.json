@@ -1,0 +1,18 @@
+{
+  "name": "agenda-db",
+  "version": "1.0.0",
+  "description": "Database module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "db",
+    "agenda"
+  ],
+  "author": "Juan Sanchez",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
