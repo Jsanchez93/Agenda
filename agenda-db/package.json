@@ -4,7 +4,8 @@
   "description": "Database module",
   "main": "index.js",
   "scripts": {
-    "lint": "standard"
+    "lint": "standard",
+    "setup": "SET DEBUG=agenda:* && node setup.js"    
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
     "standard": "^10.0.3"
   },
   "dependencies": {
+    "chalk": "^2.3.0",
+    "debug": "^3.1.0",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.23.1"
