@@ -7,19 +7,21 @@ module.exports = function setupRegistryModel (config) {
   return sequelize.define('registry', {
     name: {
       type: Sequelize.STRING,
-      allowNull: false      
+      allowNull: false
     },
     iva: {
       type: Sequelize.STRING,
-      allowNull: false      
+      allowNull: false
     },
     nit: {
       type: Sequelize.STRING,
-      allowNull: false      
+      allowNull: false
     },
     giro: {
       type: Sequelize.STRING,
-      allowNull: false      
+      allowNull: false
     }
+  }, {
+    paranoid: true
   })
 }

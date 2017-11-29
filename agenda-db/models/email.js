@@ -10,7 +10,9 @@ module.exports = function setupEmailModel (config) {
       allowNull: false,
       validate: {
         isEmail: true
-      }   
+      }
     }
+  }, {
+    paranoid: true
   })
 }

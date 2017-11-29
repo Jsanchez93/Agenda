@@ -7,7 +7,9 @@ module.exports = function setupContactModel (config) {
   return sequelize.define('contact', {
     name: {
       type: Sequelize.STRING,
-      allowNull: false      
+      allowNull: false
     }
+  }, {
+    paranoid: true
   })
 }

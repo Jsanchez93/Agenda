@@ -17,5 +17,7 @@ module.exports = function setupAreaModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     }
+  }, {
+    paranoid: true
   })
 }

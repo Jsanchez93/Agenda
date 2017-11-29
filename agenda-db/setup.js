@@ -21,7 +21,7 @@ async function setup () {
   const config = {
     database: process.env.DB_NAME || 'agenda',
     username: process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASS || '1234asdf0',
+    password: process.env.DB_PASS || '1234asdf0', // Random pass
     host: process.env.DB_HOST || 'localhost',
     dialect: 'postgres',
     logging: s => debug(s),

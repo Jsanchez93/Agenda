@@ -9,5 +9,7 @@ module.exports = function setupPhoneModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     }
+  }, {
+    paranoid: true
   })
 }
