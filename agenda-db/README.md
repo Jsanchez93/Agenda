@@ -1,5 +1,6 @@
 # Usage
 const db = require('agenda-db')
+
 async function run () {
   const config = {
     database: DB_NAME,
