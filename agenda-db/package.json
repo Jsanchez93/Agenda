@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "setup": "SET DEBUG=agenda:* && node setup.js"
+    "setup": "DEBUG=agenda:* node setup.js"
   },
   "repository": {
     "type": "git",

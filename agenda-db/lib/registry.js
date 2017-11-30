@@ -1,17 +1,57 @@
 module.exports = function setupRegistry (registryModel, contactModel, phoneModel, phoneContactModel, emailModel, areaModel, phoneTypeModel) {
   async function findAll () {
     return registryModel.findAll({
-      attributes: [ 'id', 'name', 'iva', 'nit', 'giro' ],
+      attributes: [ 'id', 'name', 'iva', 'nit', 'giro' ],      
+      raw: true
+    })
+  }
+
+  async function getPhones (registryId) {
+    return phoneModel.findAll({
+      attributes: [ 'id', 'number' ],
+      where: {
+        registryId
+      },
       include: [{
-        attributes: [ 'id', 'name' ],
-        model: contactModel,
-        as: 'contacts',
-        include: [{
-          attributes: [ 'email' ],
-          model: emailModel,
-          as: 'emails'
-        }]
+        attributes: [ 'code', 'name' ],
+        model: areaModel,
+        as: 'area'
       }],
+      raw: true
+    })
+  }
+
+  async function getPhonesContact (contactId) {
+    return phoneContactModel.findAll({
+      attributes: [ 'id', 'number' ],
+      where: {
+        contactId
+      },
+      include: [{
+        attributes: [ 'code', 'name' ],
+        model: areaModel,
+        as: 'area'
+      }],
+      raw: true
+    })
+  }
+
+  async function getContacts (registryId) {
+    return contactModel.findAll({
+      attributes: [ 'id', 'name' ],
+      where: {
+        registryId
+      },
+      raw: true
+    })
+  }
+
+  async function getContactsEmails (contactId) {
+    return emailModel.findAll({
+      attributes: [ 'id', 'email' ],
+      where: {
+        contactId
+      },
       raw: true
     })
   }
@@ -23,6 +63,10 @@ module.exports = function setupRegistry (registryModel, contactModel, phoneModel
 
   return {
     findAll,
+    getPhones,
+    getPhonesContact,
+    getContacts,
+    getContactsEmails,
     create
   }
 }

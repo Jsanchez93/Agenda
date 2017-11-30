@@ -13,13 +13,13 @@ async function run () {
 
   const { Registries } = await db(config).catch(handleFatalError)
 
-  const registro = await Registries.findAll().catch(handleFatalError)
+  const registro = await Registries.getPhonesContact(1).catch(handleFatalError)
 
   console.log(registro)
 }
 
 function handleFatalError (err) {
-  console.error(`${chalk.red('[fatal error]')} ${err.message}`)
+  console.error(`${chalk.red('[Fatal error]')} ${err.message}`)
   console.error(err.stack)
   process.exit(1)
 }
