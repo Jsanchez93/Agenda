@@ -10,7 +10,7 @@ async function run () {
     dialect: 'db engine',
     setup: false 
   }
-
+  
   const { Registries } = await db(config).catch(handleFatalError)  
 }
 
