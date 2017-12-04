@@ -1,6 +1,7 @@
 {
   "name": "agenda-db",
   "version": "1.0.0",
+  "private": true,
   "description": "Database module",
   "main": "index.js",
   "scripts": {
@@ -11,10 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/Jsanchez93/Agenda.git"
   },
-  "keywords": [
-    "db",
-    "agenda"
-  ],
   "author": "Juan Sanchez",
   "license": "MIT",
   "devDependencies": {
